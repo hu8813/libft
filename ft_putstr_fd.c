@@ -9,8 +9,8 @@
 /*   Updated: 2022/10/06 15:07:08 by huaydin          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
-#include <fcntl.h>
-#include <stdio.h>
+
+#include <libft.h>
 
 int	ft_putstr_fd()
 {
