@@ -6,18 +6,18 @@
 /*   By: huaydin <huaydin@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/03 13:13:42 by huaydin           #+#    #+#             */
-/*   Updated: 2022/10/06 15:07:09 by huaydin          ###   ########.fr       */
+/*   Updated: 2022/10/10 15:26:39 by huaydin          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <libft.h>
+#include "libft.h"
 
-long int	ft_strlen(const char *c)
+size_t	ft_strlen(const char *s)
 {
-	long unsigned int	length;
+	size_t	length;
 
 	length = 0;
-	while (*c && *c++ != '\0')
+	while (s[length])
 		length++;
 	return (length);
 }

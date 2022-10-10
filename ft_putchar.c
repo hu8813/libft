@@ -6,10 +6,20 @@
 /*   By: huaydin <huaydin@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/06 15:07:08 by huaydin           #+#    #+#             */
-/*   Updated: 2022/10/06 18:18:36 by huaydin          ###   ########.fr       */
+/*   Updated: 2022/10/10 18:50:07 by huaydin          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <libft.h>
+#include "libft.h"
 
-
+void	ft_putchar(int c)
+{
+	write(1, &c, 1);
+}
+/*
+int	main(void)
+{
+	ft_putchar(88);
+	return(0);
+}
+*/

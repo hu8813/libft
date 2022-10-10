@@ -6,11 +6,11 @@
 /*   By: huaydin <huaydin@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/03 13:13:41 by huaydin           #+#    #+#             */
-/*   Updated: 2022/10/06 15:07:07 by huaydin          ###   ########.fr       */
+/*   Updated: 2022/10/10 14:14:25 by huaydin          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <libft.h>
+#include "libft.h"
 
 int	ft_isascii(int c)
 {
@@ -21,11 +21,10 @@ int	ft_isascii(int c)
 }
 /*
 #include <stdio.h>
-#include <ctype.h>
 int	main (void)
 {
-	char c1 = 'a';
-	char c2 = 128;
+	int c1 = 'a';
+	int c2 = 128;
 
 
 	printf("char: %c is Ascii or not: %d\n", c1, ft_isascii(c1));

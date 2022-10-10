@@ -10,11 +10,11 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <libft.h>
+#include "libft.h"
 
 int	ft_putnbr_fd()
 {
-
+	return(0);
 }
 
 /*
@@ -25,15 +25,4 @@ int	ft_putnbr_fd()
  
 fd = fopen(const char *pathname, O_RDONLY);	
 */
-
-int	main(void)
-{
-FILE *fd;
-
-if ((fd = fopen("ft_isascii.c", "r")) == NULL)
-	printf("Could not open file for reading\n");
-
-printf("%d", putnbr_fd(fd));
-}
-
 
