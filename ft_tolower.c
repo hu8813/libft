@@ -6,7 +6,7 @@
 /*   By: huaydin <huaydin@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/03 13:13:43 by huaydin           #+#    #+#             */
-/*   Updated: 2022/10/06 18:18:31 by huaydin          ###   ########.fr       */
+/*   Updated: 2022/10/13 16:24:42 by huaydin          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,10 +23,11 @@ int	ft_tolower(int c)
 #include <stdio.h>
 int	main (void)
 {
-	char c1 = 'B';
-	char c2 = 'd';
+	char	c1;
+	char	c2;
 
-
+	c1 = 'B';
+	c2 = 'd';
 	printf("char: %c, and in lowercase %c\n", c1, ft_tolower(c1));
 	printf("char: %c, and in lowercase %c\n", c2, ft_tolower(c2));
 }

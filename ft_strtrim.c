@@ -6,61 +6,33 @@
 /*   By: huaydin <huaydin@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/03 13:13:43 by huaydin           #+#    #+#             */
-/*   Updated: 2022/10/10 17:11:31 by huaydin          ###   ########.fr       */
+/*   Updated: 2022/10/15 16:14:03 by huaydin          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int	ft_isspace (char c)
+char	*ft_strtrim(char const *s1, char const *set)
 {
-	if (c == ' ' || c == '\t' )
-		return (1);
+	size_t	i;
 
-	return (0);
-}
-
-char *ft_strtrim(char const *str)
-{
-	char *s;
-	size_t a;
-	size_t b;
-	size_t c;
-
-	a = 0;
-	b = 0;
-	c = 0;
-
-	s = (char *)malloc(sizeof(char) * (ft_strlen(str) + 1));
-	if (!s)
+	if (s1 == NULL || set == NULL)
 		return (NULL);
-
-	while (ft_isspace(str[a]))
-		a++;
-
-	if (str[a] == '\0')
-		return("");
-	b = ft_strlen(str) - 1;
-	while (ft_isspace(str[b]))
-		b--;
-	
-	c = b - a + 1;  
-	
-	while (c)
-	{
-		c--;
-		s[c] = str[c + a];
-		
-	}
-
-	return (s);
+	while (*s1 && ft_strchr(set, *s1))
+		s1++;
+	i = ft_strlen(s1);
+	while (i && ft_strchr(set, *(s1 + i)))
+		i--;
+	return (ft_substr(s1, 0, i + 1));
 }
-
+/*
 int	main(void)
 {
-	char *s1 = "  hello ";
-	char *s2 = " ";
+	char	*s1;
+	char	*s2;
 
-	printf("%s\n", ft_strtrim(s1));
-	printf("%s\n", ft_strtrim(s2));
+	s1 = "  \t    hello    \t  .x_";
+	s2 = ".x_ \t";
+	printf("%s\n", ft_strtrim(s1, s2));
 }
+*/

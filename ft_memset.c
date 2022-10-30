@@ -6,24 +6,22 @@
 /*   By: huaydin <huaydin@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/03 13:13:42 by huaydin           #+#    #+#             */
-/*   Updated: 2022/10/10 18:13:29 by huaydin          ###   ########.fr       */
+/*   Updated: 2022/10/13 16:24:33 by huaydin          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void *ft_memset(void *s, int c, size_t n)
+void	*ft_memset(void *s, int c, size_t n)
 {
-	size_t i;
-	unsigned char *ptr;
+	size_t			i;
+	unsigned char	*ptr;
 
-	ptr = (unsigned char *) s;
-
+	ptr = (unsigned char *)s;
 	i = 0;
-
 	while (i < n)
 	{
-		ptr[i] = (unsigned char) c;
+		ptr[i] = (unsigned char)c;
 		i++;
 	}
 	return (s);
@@ -32,12 +30,13 @@ void *ft_memset(void *s, int c, size_t n)
 int	main(void)
 {
    int len;
-   const char str[] = "http://www.tutorialspoint.com";
-   const char ch = '.';
+	const char	str[];
+	const char	ch;
    char *ret;
 
+   str[] = "http://www.tutorialspoint.com";
+   ch = '.';
    ret = ft_memset(str, ch, 3);
-
    printf("String after |%c| is - |%s|\n", ch, ret);
    
 	return(0);

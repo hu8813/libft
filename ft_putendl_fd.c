@@ -6,15 +6,23 @@
 /*   By: huaydin <huaydin@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/03 13:13:42 by huaydin           #+#    #+#             */
-/*   Updated: 2022/10/10 14:17:58 by huaydin          ###   ########.fr       */
+/*   Updated: 2022/10/16 15:37:33 by huaydin          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void	ft_putendl_fd(const char c, const int fd)
+void	ft_putendl_fd(char *s, int fd)
 {
-	write(fd, &c, 1);
-	write(fd, "\n", 1);
+	if (!s && !fd)
+		return ;
+	ft_putstr_fd(s, fd);
+	ft_putchar_fd('\n', fd);
 }
-
+/*
+int	main(void)
+{
+	ft_putendl_fd("test", 1);
+	return (0);
+}
+*/

@@ -6,7 +6,7 @@
 /*   By: huaydin <huaydin@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/03 13:13:41 by huaydin           #+#    #+#             */
-/*   Updated: 2022/10/06 18:19:01 by huaydin          ###   ########.fr       */
+/*   Updated: 2022/10/13 16:24:25 by huaydin          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,21 +20,16 @@ int	ft_isalnum(int c)
 		return (0);
 }
 /*
-#include <stdio.h>
 #include <ctype.h>
+#include <stdio.h>
 int	main (void)
 {
-	char c1 = 'a';
-	char c2 = '5';
+	char	c1;
+	char	c2;
 
-
+	c1 = 'a';
+	c2 = '5';
 	printf("char: %c is alphanumeric or not: %d\n", c1, ft_isalnum(c1));
 	printf("char: %c is alphanumeric or not: %d\n", c2, ft_isalnum(c2));
 }
 */
-
-
-
-
-
-

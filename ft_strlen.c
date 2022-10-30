@@ -6,7 +6,7 @@
 /*   By: huaydin <huaydin@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/03 13:13:42 by huaydin           #+#    #+#             */
-/*   Updated: 2022/10/10 15:26:39 by huaydin          ###   ########.fr       */
+/*   Updated: 2022/10/13 16:24:39 by huaydin          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,9 +27,11 @@ size_t	ft_strlen(const char *s)
 
 int	main (void)
 {
-	char *s1 = "re";
-	char *s2 = "Test string";
+	char	*s1;
+	char	*s2;
 
+	s1 = "re";
+	s2 = "Test string";
 	printf("string: %s length: %ld\n", s1, ft_strlen(s1));
 	printf("string: %s length: %ld\n", s2, ft_strlen(s2));
 	printf("string: %s length: %ld\n", s1, strlen(s1));
