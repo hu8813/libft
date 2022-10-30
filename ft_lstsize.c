@@ -1,43 +1,26 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strnstr.c                                       :+:      :+:    :+:   */
+/*   ft_lstsize.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: huaydin <huaydin@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/10/03 13:13:43 by huaydin           #+#    #+#             */
-/*   Updated: 2022/10/25 14:31:21 by huaydin          ###   ########.fr       */
+/*   Created: 2022/10/24 16:45:53 by huaydin           #+#    #+#             */
+/*   Updated: 2022/10/24 21:29:29 by huaydin          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-char	*ft_strnstr(const char *big, const char *little, size_t len)
+int	ft_lstsize(t_list *lst)
 {
-	size_t	i;
-	size_t	j;
+	int	size;
 
-	if (little[0] == '\0')
-		return ((char *)big);
-	i = 0;
-	while (i < len && big[i])
+	size = 0;
+	while (lst)
 	{
-		j = 0;
-		while (len > (i + j) && big[i + j] == little[j])
-		{
-			if (little[j + 1] == '\0')
-				return ((char *)&big[i]);
-			j++;
-		}
-		i++;
+		lst = lst->next;
+		size++;
 	}
-	return (NULL);
+	return (size);
 }
-/*
-#include <stdio.h>
-int	main(void)
-{
-	printf("re=%s", ft_strnstr("bigtexthere","te",6));
-	return(0);
-}
-*/

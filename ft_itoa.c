@@ -6,7 +6,7 @@
 /*   By: huaydin <huaydin@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/03 13:13:41 by huaydin           #+#    #+#             */
-/*   Updated: 2022/10/16 15:34:06 by huaydin          ###   ########.fr       */
+/*   Updated: 2022/10/25 10:22:09 by huaydin          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -40,7 +40,6 @@ char	*ft_itoa(int n)
 	ptr = (char *)malloc(sizeof(char) * (len + 1));
 	if (!ptr)
 		return (NULL);
-	ptr[len + 1] = '\0';
 	ptr[len] = '\0';
 	if (n == 0)
 		ptr[0] = '0';
@@ -57,6 +56,9 @@ char	*ft_itoa(int n)
 	return (ptr);
 }
 /*
+#include <stdio.h>
+#include <stdlib.h>
+
 int	main(void)
 {
 	printf("%s\n", ft_itoa(-22));
@@ -66,6 +68,7 @@ int	main(void)
 	printf("%s\n", ft_itoa(3434));
 	printf("%s\n", ft_itoa(-2147483648));
 	printf("%s\n", ft_itoa(2147483647));
+	printf("%s\n", ft_itoa(-2147483648LL));
 	return (1);
 }
 */

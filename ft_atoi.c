@@ -6,7 +6,7 @@
 /*   By: huaydin <huaydin@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/03 13:13:41 by huaydin           #+#    #+#             */
-/*   Updated: 2022/10/16 15:19:30 by huaydin          ###   ########.fr       */
+/*   Updated: 2022/10/24 22:44:11 by huaydin          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,9 +21,9 @@ static int	ft_isitspace(char c)
 
 int	ft_atoi(const char *nptr)
 {
-	int		i;
-	long	sign;
-	long	res;
+	int			i;
+	long		sign;
+	long long	res;
 
 	res = 0;
 	sign = 1;
@@ -43,16 +43,24 @@ int	ft_atoi(const char *nptr)
 	}
 	if ((res * sign) < -2147483648)
 		return (0);
+	if ((res * sign) > 2147483647)
+		return (-1);
 	return ((int)(res * sign));
 }
 /*
+#include <stdio.h>
 int	main(void)
 {
-	char	*c;
+	printf("int=%d\n", ft_atoi("10000000000000000000000000000000123") );
+	printf("int=%d\n", atoi("10000000000000000000000000000000123") );
+	
+	printf("int=%d\n", ft_atoi("-10000000000000000000000000000000123") );
+	printf("int=%d\n", atoi("-10000000000000000000000000000000123") );
 
-	c = "\x078";
-	printf("int=%d\n", ft_atoi(c) );
-	printf("int=%d\n", atoi(c) );
+	printf("int=%d\n", ft_atoi("            0000000000123") );
+	printf("int=%d\n", atoi("            0000000000123") );
+	
+	
 	return(0);
 }
 */

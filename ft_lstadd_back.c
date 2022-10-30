@@ -1,43 +1,28 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strnstr.c                                       :+:      :+:    :+:   */
+/*   ft_lstadd_back.c                                   :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: huaydin <huaydin@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/10/03 13:13:43 by huaydin           #+#    #+#             */
-/*   Updated: 2022/10/25 14:31:21 by huaydin          ###   ########.fr       */
+/*   Created: 2022/10/24 16:46:17 by huaydin           #+#    #+#             */
+/*   Updated: 2022/10/24 21:51:41 by huaydin          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-char	*ft_strnstr(const char *big, const char *little, size_t len)
+void	ft_lstadd_back(t_list **lst, t_list *new)
 {
-	size_t	i;
-	size_t	j;
+	t_list	*mylist;
 
-	if (little[0] == '\0')
-		return ((char *)big);
-	i = 0;
-	while (i < len && big[i])
+	if (!new)
+		return ;
+	if (!*lst)
 	{
-		j = 0;
-		while (len > (i + j) && big[i + j] == little[j])
-		{
-			if (little[j + 1] == '\0')
-				return ((char *)&big[i]);
-			j++;
-		}
-		i++;
+		*lst = new;
+		return ;
 	}
-	return (NULL);
+	mylist = ft_lstlast(*lst);
+	mylist->next = new;
 }
-/*
-#include <stdio.h>
-int	main(void)
-{
-	printf("re=%s", ft_strnstr("bigtexthere","te",6));
-	return(0);
-}
-*/

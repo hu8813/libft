@@ -6,7 +6,7 @@
 /*   By: huaydin <huaydin@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/03 13:13:42 by huaydin           #+#    #+#             */
-/*   Updated: 2022/10/16 16:32:35 by huaydin          ###   ########.fr       */
+/*   Updated: 2022/10/25 00:05:59 by huaydin          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,17 +14,15 @@
 
 char	*ft_strchr(const char *s, int c)
 {
-	size_t	i;
 	char	*ptr;
 
 	ptr = (char *)s;
-	i = 0;
-	while (ptr[i] != (char)c && ptr[i] != '\0')
-		i++;
-	if (ptr[i] == (char)c)
-		return ((char *)&ptr[i]);
-	if (!c && ptr[i] == '\0')
-		return ((char *)&ptr[i]);
+	while (*ptr != (char)c && *ptr != '\0')
+		ptr++;
+	if (*ptr == (char)c)
+		return ((char *)ptr);
+	if (!c && *ptr == '\0')
+		return ((char *)ptr);
 	return (NULL);
 }
 /*

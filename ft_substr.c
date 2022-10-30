@@ -6,7 +6,7 @@
 /*   By: huaydin <huaydin@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/03 13:13:43 by huaydin           #+#    #+#             */
-/*   Updated: 2022/10/15 12:51:59 by huaydin          ###   ########.fr       */
+/*   Updated: 2022/10/24 23:30:20 by huaydin          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,7 @@ char	*ft_substr(char const *s, unsigned int start, size_t len)
 	size_t		strsize;
 
 	if (!s)
-		return (0);
+		return (NULL);
 	strsize = ft_strlen(s);
 	if (start >= strsize)
 		start = strsize;

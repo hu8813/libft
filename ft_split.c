@@ -6,7 +6,7 @@
 /*   By: huaydin <huaydin@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/03 13:13:42 by huaydin           #+#    #+#             */
-/*   Updated: 2022/10/16 17:47:49 by huaydin          ###   ########.fr       */
+/*   Updated: 2022/10/24 23:27:50 by huaydin          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,21 +14,19 @@
 
 static int	ft_count_words(char const *s, char c)
 {
-	int	i;
 	int	wordcount;
 
-	i = 0;
 	wordcount = 0;
-	while (s[i])
+	while (*s)
 	{
-		if (s[i] != c)
+		if (*s != c)
 		{
 			wordcount++;
-			while (s[i] != c && s[i])
-				i++;
+			while (*s != c && *s)
+				s++;
 		}
 		else
-			i++;
+			s++;
 	}
 	return (wordcount);
 }

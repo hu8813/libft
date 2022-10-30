@@ -6,7 +6,7 @@
 /*   By: huaydin <huaydin@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/03 13:13:41 by huaydin           #+#    #+#             */
-/*   Updated: 2022/10/16 16:18:46 by huaydin          ###   ########.fr       */
+/*   Updated: 2022/10/24 22:45:36 by huaydin          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,14 +15,10 @@
 void	*ft_calloc(size_t nmemb, size_t size)
 {
 	unsigned char	*ptr;
-	size_t			i;
 
-	i = 0;
 	ptr = (unsigned char *)malloc(nmemb * size);
-	if (!ptr)
-		return (NULL);
-	while (i < nmemb * size)
-		ptr[i++] = '\0';
+	if (ptr)
+		ft_memset(ptr, 0, nmemb * size);
 	return (ptr);
 }
 /*

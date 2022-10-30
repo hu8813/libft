@@ -1,43 +1,29 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strnstr.c                                       :+:      :+:    :+:   */
+/*   ft_lstlast.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: huaydin <huaydin@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/10/03 13:13:43 by huaydin           #+#    #+#             */
-/*   Updated: 2022/10/25 14:31:21 by huaydin          ###   ########.fr       */
+/*   Created: 2022/10/24 16:46:58 by huaydin           #+#    #+#             */
+/*   Updated: 2022/10/24 21:41:45 by huaydin          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-char	*ft_strnstr(const char *big, const char *little, size_t len)
+t_list	*ft_lstlast(t_list *lst)
 {
-	size_t	i;
-	size_t	j;
+	t_list	*mylist;
 
-	if (little[0] == '\0')
-		return ((char *)big);
-	i = 0;
-	while (i < len && big[i])
+	if (!lst)
+		return (lst);
+	mylist = lst;
+	while (mylist != NULL)
 	{
-		j = 0;
-		while (len > (i + j) && big[i + j] == little[j])
-		{
-			if (little[j + 1] == '\0')
-				return ((char *)&big[i]);
-			j++;
-		}
-		i++;
+		if (mylist->next == NULL)
+			return (mylist);
+		mylist = mylist->next;
 	}
-	return (NULL);
+	return (0);
 }
-/*
-#include <stdio.h>
-int	main(void)
-{
-	printf("re=%s", ft_strnstr("bigtexthere","te",6));
-	return(0);
-}
-*/

@@ -6,7 +6,7 @@
 /*   By: huaydin <huaydin@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/03 13:13:43 by huaydin           #+#    #+#             */
-/*   Updated: 2022/10/16 16:36:03 by huaydin          ###   ########.fr       */
+/*   Updated: 2022/10/25 11:40:31 by huaydin          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,10 +26,27 @@ char	*ft_strrchr(const char *s, int c)
 	return (NULL);
 }
 /*
+#include <string.h>
+#include <stdio.h>
+
 int	main(void)
 {
-	printf("%s\n", ft_strrchr("hello", 'l'));
-	printf("%s\n", strrchr("helle", 'l'));
+	char *str = "bonjour";
+
+	printf("%s\n", ft_strrchr(str + 2, 'b'));
+	printf("%s\n", strrchr(str + 2, 'b'));
+	printf("%s\n", ft_strrchr("hello", '\0'));
+	printf("%s\n", strrchr("hello", '\0'));
+	printf("%s\n", ft_strrchr("hello", 'e'));
+	printf("%s\n", strrchr("hello", 'e'));
+	printf("%s\n", ft_strrchr("bonjour", 'b'));
+	printf("%s\n", strrchr("bonjour", 'b'));
+	printf("%s\n", ft_strrchr("", 'e'));
+	printf("%s\n", strrchr("", 'e'));
+	printf("%s\n", ft_strrchr("", '\0'));
+	printf("%s\n", strrchr("", '\0'));
+	printf("%s\n", ft_strrchr(" ", '\0'));
+	printf("%s\n", strrchr(" ", '\0'));
 	return (0);
 }
 */

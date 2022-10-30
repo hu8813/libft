@@ -6,7 +6,7 @@
 /*   By: huaydin <huaydin@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/03 13:13:42 by huaydin           #+#    #+#             */
-/*   Updated: 2022/10/16 16:45:24 by huaydin          ###   ########.fr       */
+/*   Updated: 2022/10/25 00:01:54 by huaydin          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,16 +17,12 @@ char	*ft_strdup(const char *s)
 	char	*str;
 	size_t	i;
 
-	i = 0;
-	str = (char *)malloc(sizeof(char) * (ft_strlen(s) + 1));
+	i = ft_strlen(s) + 1;
+	str = (char *)malloc(sizeof(char) * i);
 	if (!str)
 		return (NULL);
-	while (s[i])
-	{
+	while (i--)
 		str[i] = s[i];
-		i++;
-	}
-	str[i] = s[i];
 	return (str);
 }
 /*

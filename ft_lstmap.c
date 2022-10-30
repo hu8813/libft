@@ -1,43 +1,36 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strnstr.c                                       :+:      :+:    :+:   */
+/*   ft_lstmap.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: huaydin <huaydin@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/10/03 13:13:43 by huaydin           #+#    #+#             */
-/*   Updated: 2022/10/25 14:31:21 by huaydin          ###   ########.fr       */
+/*   Created: 2022/10/24 16:47:04 by huaydin           #+#    #+#             */
+/*   Updated: 2022/10/25 11:47:23 by huaydin          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-char	*ft_strnstr(const char *big, const char *little, size_t len)
+t_list	*ft_lstmap(t_list *lst, void *(*f)(void *),
+void (*del)(void *))
 {
-	size_t	i;
-	size_t	j;
+	t_list	*mylist;
+	void	*tmp;
 
-	if (little[0] == '\0')
-		return ((char *)big);
-	i = 0;
-	while (i < len && big[i])
+	if (!lst)
+		return (NULL);
+	mylist = NULL;
+	while (lst)
 	{
-		j = 0;
-		while (len > (i + j) && big[i + j] == little[j])
+		tmp = f(lst->content);
+		if (!tmp)
 		{
-			if (little[j + 1] == '\0')
-				return ((char *)&big[i]);
-			j++;
+			ft_lstclear(&mylist, del);
+			return (NULL);
 		}
-		i++;
+		ft_lstadd_back(&mylist, ft_lstnew(tmp));
+		lst = lst->next;
 	}
-	return (NULL);
+	return (mylist);
 }
-/*
-#include <stdio.h>
-int	main(void)
-{
-	printf("re=%s", ft_strnstr("bigtexthere","te",6));
-	return(0);
-}
-*/

@@ -6,7 +6,7 @@
 /*   By: huaydin <huaydin@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/03 13:13:42 by huaydin           #+#    #+#             */
-/*   Updated: 2022/10/16 14:51:13 by huaydin          ###   ########.fr       */
+/*   Updated: 2022/10/24 23:25:46 by huaydin          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,9 +14,6 @@
 
 void	ft_putnbr_fd(int n, int fd)
 {
-	int	i;
-
-	i = 0;
 	if (n == -2147483648)
 		ft_putstr_fd("-2147483648", fd);
 	else if (n < 0)
@@ -31,7 +28,6 @@ void	ft_putnbr_fd(int n, int fd)
 	}
 	else if (n <= 9 && n >= 0)
 		ft_putchar_fd(n + '0', fd);
-	(void)i;
 }
 /*
 int	main(void)
